@@ -17,7 +17,7 @@ if (answer) {
 		if (login in array) {
 			while (true) {
 				let password = prompt("Введите пароль: ");
-				if (password == array[login]["password"]) {
+				if (password == array[login].password) {
 					alert('Вы успешно вошли на страницу!');
 					break;
 				} else {
