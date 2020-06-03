@@ -26,7 +26,7 @@ if (answer) {
             while (true) {
                 let password = prompt("Введите пароль: ");
                 if (password == array[login]["password"]) {
-                    alert('Вы успешно вошли на страницу!');
+                    alert('Вы успешно вошли!');
                     break;
                 } else {
                     alert('Неправильный пароль!');
