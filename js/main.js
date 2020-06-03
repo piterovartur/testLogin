@@ -1,32 +1,21 @@
-let array = {
-    artur: {
-        name: "Артур",
-        password: "1h8nn3n6"
-    },
-    bogdan: {
-        name: "Богдан",
-        password: "3h3nn3n3"
-    },
-    ruslan: {
-        name: "Руслан",
-        password: "121323434"
-    },
-    caroline: {
-        name: "Кэролайн",
-        password: "wzgn82"
-    }
+let userLogin = "root";
+let userPassword = "root";
+
+let user = {
+    login: () => userLogin,
+    password: () => userPassword
 };
 
-function browserCode() {
+function login() {
     let answer = confirm('Войти?');
 
     if (answer) {
         while (true) {
             let login = prompt("Введите логин: ");
-            if (login in array) {
+            if (login == userLogin) {
                 while (true) {
                     let password = prompt("Введите пароль: ");
-                    if (password == array[login]["password"]) {
+                    if (password == userPassword) {
                         alert('Вы успешно вошли!');
                         document.location.href = "../secret.html";
                         break;
@@ -41,6 +30,27 @@ function browserCode() {
                 break;
             } else {
                 alert('Такого пользователя не существует.');
+            }
+        }
+    }
+}
+
+function register() {
+    let answer = confirm('Зарегистрироваться?');
+
+    if (answer) {
+        while (true) {
+            let login = prompt("Введите новый логин: ");
+            let password = prompt("Введите новый пароль: ");
+            if (login == null || password == null) {
+                break;
+            } else if (login == '' || password == '') {
+                alert('Логин или пароль не могут быть пустыми!');
+            } else {
+                userLogin = login;
+                userPassword = password;
+                alert('Успешная регистрация!');
+                break;
             }
         }
     }
