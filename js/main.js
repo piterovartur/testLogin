@@ -23,7 +23,6 @@ function browserCode() {
     if (answer) {
         while (true) {
             let login = prompt("Введите логин: ");
-            console.log(login);
             if (login in array) {
                 while (true) {
                     let password = prompt("Введите пароль: ");
